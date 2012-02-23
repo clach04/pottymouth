@@ -404,7 +404,7 @@ class PottyMouth(object):
 
 
     def handle_url(self, t):
-        if not protocol_pattern.match(t):
+        if not protocol_pattern.match(str(t)):
             t = Token(t.name, 'http://' + t)
 
         if self._url_check_domain and self._url_check_domain.findall(t):
